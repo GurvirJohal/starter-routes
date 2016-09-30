@@ -52,6 +52,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['show/(:num)'] = 'first/gimme/$1';
 $route['lock/(:any)/(:any)'] = 'welcome/shucks';
 $route['sleep'] = 'first/zzz';
+$route['dunno'] = function(){
+    $source = './pix/Pig-Wallpaper-150x150.jpg';
+    // set the mine type for the image
+    header("Content-type: image/jpeg");
+    header('Content-Distribution: inline');
+    readfile($source);
+    die();
+};
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
